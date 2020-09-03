@@ -1,68 +1,41 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+`
 
-## Available Scripts
+# Codechef API
 
-In the project directory, you can run:
+###I just cant see my fellow developers begging for an API 😥
 
-### `npm start`
+So I made one😎:
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+![](https://res.cloudinary.com/dcykxiua2/image/upload/v1599109301/codechef_discuss_qbgpt6.png)
+The wait is over guys!!
+=============
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+###What to do?
 
-### `npm test`
+> Just clone the repository to start working with the api.
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+####Some Guidelines to be followed:-
 
-### `npm run build`
+Please never forget to write the `username` of the codechef user in the body of the request in `JSON format` .
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+    localhost:3000/name------------>To get the full name of user
+    localhost:3000/org--------------->To get the full name of the organisation of user
+    localhost:3000/graph-------->To get image of progress graph in your current directory
+    localhost:3000/main_rating------>To get the main rating of the user
+    localhost:3000/country_rank----->To get the country rank of the user
+    localhost:3000/get_motto-------->To get the motto of the user
+    localhost:3000/get_stars---------->To get the star rating of the user
+    localhost:3000/highest_rank------>To get the highest rank of the user
+    localhost:3000/global_rank------->To get the global of the user
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+##Steps to be performed:-
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+-   [x] clone the repo
+-   [x] npm install
+-   [x] cd server
+-   [x] node server.js
+-   [x] You are ready to go 🤟!!
 
-### `npm run eject`
+####Please ⭐ the repository if you liked my work(that would really mean a lot).
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+`
