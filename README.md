@@ -2,7 +2,7 @@
 
 # Codechef API
 
-#I just cant see my fellow developers begging for an API 😥
+## I just cant see my fellow developers begging for an API 😥
 
 So I made one😎:
 
@@ -10,11 +10,11 @@ So I made one😎:
 The wait is over guys!!
 =============
 
-###What to do?
+### What to do?
 
 > Just clone the repository to start working with the api.
 
-####Some Guidelines to be followed:-
+#### Some Guidelines to be followed:-
 
 Please never forget to write the `username` of the codechef user in the body of the request in `JSON format` .
 
@@ -36,6 +36,6 @@ Please never forget to write the `username` of the codechef user in the body of 
 -   [x] node server.js
 -   [x] You are ready to go 🤟!!
 
-####Please ⭐ the repository if you liked my work(that would really mean a lot).
+##### Please ⭐ the repository if you liked my work(that would really mean a lot).
 
 `
