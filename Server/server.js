@@ -1,6 +1,19 @@
+const express = require("express");
 const puppeteer = require("puppeteer-core");
 
-const scrape = async (url) => {
+const bodyParser = require("body-parser");
+const app = express();
+// const {
+//     scrapechef_main_rating,
+//     scrapechef_country_rank,
+//     scrapechef_global_rank,
+//     scrapechef_motto,
+//     scrapechef_star,
+//     scrapechef_highest_rank,
+//     scrapechef_organisation,
+//     scrapechef_name,
+// } = require("./controllers");
+const scrapechef_organisation = async (url) => {
     try {
         const browser = await puppeteer.launch({
             headless: true,
@@ -15,95 +28,44 @@ const scrape = async (url) => {
             timeout: 0,
         });
         //await page.setDefaultNavigationTimeout(0);
-
-        const [el] = await page.$x('//*[@id="title"]');
-        const text = await el.getProperty("textContent");
-        const text2 = await text.jsonValue();
-        browser.close();
-        console.log(text2);
-    } catch (err) {
-        console.log(err);
-    }
-};
-
-const scrapechef = async (url) => {
-    try {
-        const browser = await puppeteer.launch({
-            headless: true,
-
-            executablePath:
-                "C:/Program Files (x86)/Google/Chrome/Application/chrome.exe",
-        });
-        const page = await browser.newPage();
-        await page.goto(url, {
-            waitUntil: "load",
-            // Remove the timeout
-            timeout: 0,
-        });
-        //await page.setDefaultNavigationTimeout(0);
-
-        const [rating] = await page.$x(
-            "/html/body/main/div/div/div/aside/div[1]/div/div[1]/div[1]"
-        );
-        const text = await rating.getProperty("textContent");
-        const text2 = await text.jsonValue();
-        console.log("rating", text2);
-
-        const [global_rank] = await page.$x(
-            "/html/body/main/div/div/div/aside/div[1]/div/div[2]/ul/li[1]/a/strong"
-        );
-        const gr = await global_rank.getProperty("textContent");
-        const gr2 = await gr.jsonValue();
-        console.log("global_rank", gr2);
-
-        const [country_rank] = await page.$x(
-            "/html/body/main/div/div/div/aside/div[1]/div/div[2]/ul/li[2]/a/strong"
-        );
-        const cr = await country_rank.getProperty("textContent");
-        const cr2 = await cr.jsonValue();
-        console.log("country_rank:", cr2);
-
-        const [star] = await page.$x(
-            "/html/body/main/div/div/div/div/div/section[1]/ul/li[1]/span/span[1]"
-        );
-        const str = await star.getProperty("textContent");
-        const str2 = await str.jsonValue();
-        console.log("Star:", str2);
-
-        const [motto] = await page.$x(
-            // "/html/body/main/div/div/div/div/div/section[1]/ul/li[5]/span"
-            "/html/body/main/div/div/div/div/div/section[1]/ul/li[6]/span"
-        );
-        const m = await motto.getProperty("textContent");
-        const m2 = await m.jsonValue();
-        console.log("Motto:", m2);
-
-        const [name] = await page.$x(
-            "/html/body/main/div/div/div/div/div/header/h2"
-        );
-        const name1 = await name.getProperty("textContent");
-        const name2 = await name1.jsonValue();
-        console.log("Name:", name2);
 
         const [org] = await page.$x(
             "/html/body/main/div/div/div/div/div/section[1]/ul/li[8]/span"
         );
         const o = await org.getProperty("textContent");
         const o2 = await o.jsonValue();
-        console.log("Organisation:", o2);
-
-        const [highest] = await page.$x(
-            "/html/body/main/div/div/div/aside/div[1]/div/div[1]/small"
-        );
-        const h = await highest.getProperty("textContent");
-        const h2 = await h.jsonValue();
-        console.log(h2);
+        return "Organisation:", o2;
     } catch (err) {
         console.log(err);
     }
 };
+const scrapechef_graph = async (url) => {
+    try {
+        const browser = await puppeteer.launch({
+            headless: true,
 
-const scrapeforces = async (url) => {
+            executablePath:
+                "C:/Program Files (x86)/Google/Chrome/Application/chrome.exe",
+        });
+        const page = await browser.newPage();
+        await page.setViewport({ width: 1920, height: 1080 });
+
+        await page.goto(url, {
+            waitUntil: "load",
+            // Remove the timeout
+            timeout: 0,
+        });
+        //await page.setDefaultNavigationTimeout(0);
+        await page.screenshot({
+            path: "./image.jpg",
+            type: "jpeg",
+            clip: { x: 0, y: 0, width: 1000, height: 700 },
+        });
+    } catch (err) {
+        console.log(err);
+    }
+};
+const scrapechef_name = async (url) => {
     try {
         const browser = await puppeteer.launch({
             headless: true,
@@ -119,52 +81,38 @@ const scrapeforces = async (url) => {
         });
         //await page.setDefaultNavigationTimeout(0);
 
-        const [country_rank] = await page.$x(
-            '//*[@id="pageContent"]/div[2]/div[5]/div[2]/ul/li[1]/span[1]'
-        );
-        const cr = await country_rank.getProperty("textContent");
-        const cr2 = await cr.jsonValue();
-        console.log("country_rank:", cr2);
-
-        const [star] = await page.$x(
-            '//*[@id="pageContent"]/div[2]/div[5]/div[2]/ul/li[2]/span'
-        );
-        const str = await star.getProperty("textContent");
-        const str2 = await str.jsonValue();
-        console.log("Star:", str2);
-
-        const [org] = await page.$x(
-            '//*[@id="pageContent"]/div[2]/div[5]/div[2]/div/div[2]/div[2]/a'
-        );
-        const o = await org.getProperty("textContent");
-        const o2 = await o.jsonValue();
-        console.log("Organisation:", o2);
-
-        const [highest] = await page.$x(
-            '//*[@id="pageContent"]/div[2]/div[5]/div[2]/ul/li[1]/span[2]'
-        );
-        const gr = await highest.getProperty("textContent");
-        const gr2 = await gr.jsonValue();
-        console.log(gr2);
-
         const [name] = await page.$x(
-            '//*[@id="pageContent"]/div[2]/div[5]/div[2]/div/div[2]/div[1]'
+            "/html/body/main/div/div/div/div/div/header/h2"
         );
         const name1 = await name.getProperty("textContent");
         const name2 = await name1.jsonValue();
-        console.log("Name:", name2);
-
-        const [title] = await page.$x(
-            '//*[@id="pageContent"]/div[2]/div[5]/div[2]/div/div[1]/span'
-        );
-        const t1 = await title.getProperty("textContent");
-        const t2 = await t1.jsonValue();
-        console.log("title:", t2);
+        return "Name:", name2;
     } catch (err) {
         console.log(err);
     }
 };
+app.use(bodyParser.json());
 
-//scrape("https://www.amazon.in/dp/B075R9P7H8/_i=22120008031");
-scrapechef("https://www.codechef.com/users/abdullah768");
-scrapeforces("https://codeforces.com/profile/shubham__36");
+app.get("/name", async (req, res) => {
+    const username = req.body.username;
+    let response = await scrapechef_name(
+        `https://www.codechef.com/users/${username}`
+    );
+    res.send(response);
+});
+app.get("/org", async (req, res) => {
+    const username = req.body.username;
+    let response = await scrapechef_organisation(
+        `https://www.codechef.com/users/${username}`
+    );
+    res.send(response);
+});
+app.get("/graph", async (req, res) => {
+    const username = req.body.username;
+    let response = await scrapechef_graph(
+        `https://www.codechef.com/users/${username}`
+    );
+    //res.send(response);
+});
+
+app.listen(3000);
