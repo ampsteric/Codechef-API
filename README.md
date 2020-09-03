@@ -28,7 +28,7 @@ Please never forget to write the `username` of the codechef user in the body of 
     localhost:3000/highest_rank------>To get the highest rank of the user
     localhost:3000/global_rank------->To get the global of the user
 
-##Steps to be performed:-
+## Steps to be performed:-
 
 -   [x] clone the repo
 -   [x] npm install
