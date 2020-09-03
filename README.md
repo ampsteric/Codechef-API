@@ -2,7 +2,7 @@
 
 # Codechef API
 
-###I just cant see my fellow developers begging for an API 😥
+#I just cant see my fellow developers begging for an API 😥
 
 So I made one😎:
 
