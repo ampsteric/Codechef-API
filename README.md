@@ -2,10 +2,6 @@
 
 # Codechef API
 
-## I just cant see my fellow developers begging for an API 😥
-
-So I made one😎:
-
 ![](https://res.cloudinary.com/dcykxiua2/image/upload/v1599109301/codechef_discuss_qbgpt6.png)
 The wait is over guys!!
 =============
